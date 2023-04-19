@@ -41,16 +41,19 @@ const ContactsList = () => {
       <ul>
         {filteredContacts.map(({ id, name, number }) => {
           return (
-            <ContactItem key={id}>
-              <li>
+            <li key={id}>
+              <ContactItem>
                 <p>
                   {name}: <b>{number}</b>
                 </p>
-              </li>
-              <BtnContact type="BtnContact" onClick={() => deleteContactId(id)}>
-                Delete
-              </BtnContact>
-            </ContactItem>
+                <BtnContact
+                  type="BtnContact"
+                  onClick={() => deleteContactId(id)}
+                >
+                  Delete
+                </BtnContact>
+              </ContactItem>
+            </li>
           );
         })}
       </ul>
